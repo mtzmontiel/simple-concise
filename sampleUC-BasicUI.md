@@ -1,7 +1,8 @@
 ---
-title: "Sample Use Case"
-description: "sample"
+title: "Sample Use Case - Basic User Interface"
+description: "user interface requirements"
 layout: post
+next: "sampleUC-BasicSecurity"
 tags: []
 ---
 
@@ -119,29 +120,4 @@ Lets consider a N to M relationship with a join class/table
 
 <img src="{{site.url}}/assets/dot/su-baui-deployment-status.dot.svg" />
 
-Now our user interface is getting a little complicated
-
-Security
-========
-
-Event Log (business wise)
-========
-
-Rest API
-========
-
-Validation
-========
-
-Localization
-========
-
-End user documentation
-========
-
-Sysadmin documentation
-========
-
-App mantainer documentation
-========
-
+Now our user interface is getting a little complicated.

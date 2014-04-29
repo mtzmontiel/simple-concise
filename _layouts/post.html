@@ -14,9 +14,9 @@
         {{ content }}
 
         <p class="intro">
-        {% if page.previous %}<a href="{{site.url}}/chapter-{{page.previous}}.html">Previous</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{% endif %}
+        {% if page.previous %}<a href="{{site.url}}/{{page.previous}}.html">Previous</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{% endif %}
         <a href="{{site.url}}/">Index</a>&nbsp;&nbsp;&nbsp;
-        {% if page.next %}|&nbsp;&nbsp;&nbsp;<a href="{{site.url}}/chapter-{{page.next}}.html">Next</a>{% endif %}
+        {% if page.next %}|&nbsp;&nbsp;&nbsp;<a href="{{site.url}}/{{page.next}}.html">Next</a>{% endif %}
         </p>
       </article>
 

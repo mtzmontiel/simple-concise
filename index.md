@@ -39,6 +39,6 @@ Whenever I have some spare time which is why I presume this will fail and flail.
 TOC
 ===
 
-<a href="{{site.url}}/sampleUC.html">Sample Use Case</a>
-
+* <a href="{{site.url}}/sampleUC-BasicUI.html">Sample Use Case - Basic User Interface</a>
+* <a href="{{site.url}}/sampleUC-BasicSecurity.html">Sample Use Case - Basic Security</a>
 
