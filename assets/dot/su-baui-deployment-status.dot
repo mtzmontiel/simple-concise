@@ -1,0 +1,7 @@
+digraph deploymentStatus {
+    rankdir=LR
+    SCHEDULLED, DEPLOYED, REMOVED, CANCELED;
+    SCHEDULLED -> DEPLOYED [label="deploy"];
+    DEPLOYED -> REMOVED [label="remove"];
+    SCHEDULLED -> CANCELED [label="cancel"];
+  }
