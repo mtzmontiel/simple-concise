@@ -6,3 +6,5 @@ owner:
   name:           Rafael Martinez Montiel
 
 timezone:    America/Mexico_City
+
+markdown: kramdown
