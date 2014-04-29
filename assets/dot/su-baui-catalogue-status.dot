@@ -1,0 +1,9 @@
+digraph  catalogueStatus { 
+    rankdir=LR
+    DRAFT;
+    PUBLISHED;
+    HIDDEN;
+    DRAFT -> PUBLISHED [label="publish"];
+    PUBLISHED -> HIDDEN [label="hide"];
+    HIDDEN -> PUBLISHED [label="publish"];
+}
