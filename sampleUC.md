@@ -89,8 +89,37 @@ Functional requirements include at least
 
 Nothing out of ordinary I would think but if you translate this to current JEE 
 practices code metrics would be around 4 kloc Java and possibly 
-8 kloc xml/xhtml; not very nice and still we are missing non functional 
+8 kloc xml/xhtml; not very nice and still we are still missing non functional 
 requirements.
+
+Case 3
+------
+
+Lets consider a N to M relationship with a join class/table
+
+~~~
+
+  artifact
+    
+  server
+  
+  enum deploymentStatus {
+    SCHEDULLED, DEPLOYED, REMOVED, CANCELED;
+    SCHEDULLED -> DEPLOYED -> REMOVED;
+    SCHEDULLED -> CANCELED;
+  }
+  
+  deployment { date , status : deploymentStatus }
+  
+  artifact ( 1 -> n ) deployment
+  
+  server ( 1 -> m ) deployment
+
+~~~
+
+<img src="{{site.url}}/assets/dot/su-baui-deployment-status.dot.svg" />
+
+Now our user interface is getting a little complicated
 
 Security
 ========
