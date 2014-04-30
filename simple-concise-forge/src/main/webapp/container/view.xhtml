@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:forgeview="http://jboss.org/forge/view"
+	template="/resources/scaffold/pageTemplate.xhtml">
+
+	<f:metadata>
+		<f:viewParam name="id" value='#{containerBean.id}'/>
+		<f:event type="preRenderView" listener='#{containerBean.retrieve}'/>
+	</f:metadata>
+
+	<ui:param name="pageTitle" value="View Container"/>
+
+	<ui:define name="header">
+		Container
+	</ui:define>
+
+	<ui:define name="subheader">
+		View existing Container
+	</ui:define>
+
+	<ui:define name="footer"/>
+
+	<ui:define name="main">
+		<h:panelGrid columnClasses="label,component,required" columns="3">
+			<h:outputLabel for="containerBeanContainerCode" value="Code:"/>
+			<h:outputText id="containerBeanContainerCode" value="#{containerBean.container.code}"/>
+			<h:outputText/>
+			<h:outputLabel for="containerBeanContainerDescription" value="Description:"/>
+			<h:outputText id="containerBeanContainerDescription" value="#{containerBean.container.description}"/>
+			<h:outputText/>
+			<h:outputLabel for="containerBeanContainerItems" value="Items:"/>
+			<h:dataTable id="containerBeanContainerItems" styleClass="data-table" value="#{forgeview:asList(containerBean.container.items)}" var="_item">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Code"/>
+					</f:facet>
+					<h:link outcome="/item/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemCode" value="#{_item.code}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Description"/>
+					</f:facet>
+					<h:link outcome="/item/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemDescription" value="#{_item.description}"/>
+					</h:link>
+				</h:column>
+			</h:dataTable>
+			<h:outputText/>
+		</h:panelGrid>
+
+		<div class="buttons">
+			<h:link value="View All" outcome="search" styleClass="btn btn-primary"/> 
+			<h:link value="Edit" outcome="create" includeViewParams="true" styleClass="btn btn-primary"/>
+			<h:link value="Create New" outcome="create" styleClass="btn btn-primary"/>
+		</div>
+	</ui:define>
+
+</ui:composition>
