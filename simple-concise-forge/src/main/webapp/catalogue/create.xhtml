@@ -48,6 +48,17 @@
 					<h:message for="catalogueBeanCatalogueDescription" styleClass="error"/>
 				</h:panelGroup>
 				<h:outputText/>
+				<h:outputLabel for="catalogueBeanCatalogueStatus" value="Status:"/>
+				<h:panelGroup>
+					<h:selectOneMenu id="catalogueBeanCatalogueStatus" value="#{catalogueBean.catalogue.status}">
+						<f:selectItem/>
+						<f:selectItem itemValue="DRAFT"/>
+						<f:selectItem itemValue="PUBLISHED"/>
+						<f:selectItem itemValue="HIDDEN"/>
+					</h:selectOneMenu>
+					<h:message for="catalogueBeanCatalogueStatus" styleClass="error"/>
+				</h:panelGroup>
+				<h:outputText/>
 			</h:panelGrid>
 
 			<div class="buttons">

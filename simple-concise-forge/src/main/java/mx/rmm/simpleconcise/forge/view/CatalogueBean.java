@@ -25,6 +25,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import mx.rmm.simpleconcise.forge.model.Catalogue;
+import mx.rmm.simpleconcise.forge.model.CatalogueStatus;
 
 /**
  * Backing bean for Catalogue entities.
@@ -236,6 +237,11 @@ public class CatalogueBean implements Serializable
       if (description != null && !"".equals(description))
       {
          predicatesList.add(builder.like(builder.lower(root.<String> get("description")), '%' + description.toLowerCase() + '%'));
+      }
+      CatalogueStatus status = this.example.getStatus();
+      if (status != null)
+      {
+         predicatesList.add(builder.equal(root.get("status"), status));
       }
 
       return predicatesList.toArray(new Predicate[predicatesList.size()]);

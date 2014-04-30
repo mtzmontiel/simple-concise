@@ -8,6 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Column;
 import javax.persistence.Version;
 import java.lang.Override;
+import javax.persistence.Enumerated;
+import mx.rmm.simpleconcise.forge.model.CatalogueStatus;
+import javax.persistence.EnumType;
 
 @Entity
 public class Catalogue implements Serializable
@@ -26,6 +29,9 @@ public class Catalogue implements Serializable
 
    @Column(length = 100)
    private String description;
+
+   @Enumerated(EnumType.STRING)
+   private CatalogueStatus status;
 
    public Long getId()
    {
@@ -96,6 +102,16 @@ public class Catalogue implements Serializable
    public void setDescription(String description)
    {
       this.description = description;
+   }
+
+   public CatalogueStatus getStatus()
+   {
+      return status;
+   }
+
+   public void setStatus(CatalogueStatus status)
+   {
+      this.status = status;
    }
 
    @Override

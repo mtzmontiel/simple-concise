@@ -41,6 +41,17 @@
 							<h:message for="catalogueBeanExampleDescription" styleClass="error"/>
 						</h:panelGroup>
 						<h:outputText/>
+						<h:outputLabel for="catalogueBeanExampleStatus" value="Status:"/>
+						<h:panelGroup>
+							<h:selectOneMenu id="catalogueBeanExampleStatus" value="#{catalogueBean.example.status}">
+								<f:selectItem/>
+								<f:selectItem itemValue="DRAFT"/>
+								<f:selectItem itemValue="PUBLISHED"/>
+								<f:selectItem itemValue="HIDDEN"/>
+							</h:selectOneMenu>
+							<h:message for="catalogueBeanExampleStatus" styleClass="error"/>
+						</h:panelGroup>
+						<h:outputText/>
 					</h:panelGrid>
 					<h:panelGroup styleClass="buttons">
 						<h:commandLink value="Search" action='#{catalogueBean.search}' styleClass="btn btn-primary"/>
@@ -66,6 +77,15 @@
 					<h:link outcome="/catalogue/view">
 						<f:param name="id" value="#{_item.id}"/>
 						<h:outputText id="itemDescription" value="#{_item.description}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Status"/>
+					</f:facet>
+					<h:link outcome="/catalogue/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemStatus" value="#{_item.status}"/>
 					</h:link>
 				</h:column>
 			</h:dataTable>
