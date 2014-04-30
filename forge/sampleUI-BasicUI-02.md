@@ -1,9 +1,10 @@
 ---
-title: "Forge 01"
-description: "Sample Use Case - Basic UI 02 - Status"
+title: "Forge 02"
+description: "Sample Use Case - Basic UI 01 - Status"
 layout: post
 up: "sampleUC-BasicUI"
 previous: "forge/sampleUI-BasicUI"
+next: "forge/sampleUI-BasicUI-03"
 tags: []
 ---
 
@@ -114,7 +115,9 @@ busines case.
 
 <img src="{{site.url}}/assets/dot/su-baui-catalogue-status.dot.svg" />
 
-You can find source code here
+You can find source code You can find the source files [here][code-forge-buc-bui-1.1].
 
-https://github.com/mtzmontiel/simple-concise/releases/tag/code-forge-buc-bui-1.1
+[code-forge-buc-bui-1.1]:https://github.com/mtzmontiel/simple-concise/releases/tag/code-forge-buc-bui-1.1
+
+For now let's continue with sample 02 of our basic UI requirements
 

@@ -274,8 +274,8 @@ industry metrics. With this in mind i've just become a lot more "productive"
 but there are problems with this implementation that will become very 
 troublesome.
 
-You can find the source files here:
+You can find the source files [here][code-forge-buc-bui-1.0].
 
-https://github.com/mtzmontiel/simple-concise/releases/tag/code-forge-buc-bui-1.0
+[code-forge-buc-bui-1.0]:https://github.com/mtzmontiel/simple-concise/releases/tag/code-forge-buc-bui-1.0
 
 Let's continue our example by adding our state machine to this.
