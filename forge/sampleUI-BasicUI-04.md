@@ -68,3 +68,36 @@ Now the hairy part, N-to-M via Deployment
 ~~~
 
 
+Current metrics
+
+~~~
+.java
+ 2808 total
+.xhtml
+ 1650 total
+.xml
+ 173 total
+
+~~~
+
+<img src="{{site.url}}/assets/images/suc-bui-forge/028.png" />
+<img src="{{site.url}}/assets/images/suc-bui-forge/029.png" />
+<img src="{{site.url}}/assets/images/suc-bui-forge/030.png" />
+<img src="{{site.url}}/assets/images/suc-bui-forge/031.png" />
+<img src="{{site.url}}/assets/images/suc-bui-forge/032.png" />
+<img src="{{site.url}}/assets/images/suc-bui-forge/033.png" />
+<img src="{{site.url}}/assets/images/suc-bui-forge/034.png" />
+<img src="{{site.url}}/assets/images/suc-bui-forge/035.png" />
+<img src="{{site.url}}/assets/images/suc-bui-forge/036.png" />
+<img src="{{site.url}}/assets/images/suc-bui-forge/037.png" />
+<img src="{{site.url}}/assets/images/suc-bui-forge/038.png" />
+<img src="{{site.url}}/assets/images/suc-bui-forge/039.png" />
+<img src="{{site.url}}/assets/images/suc-bui-forge/040.png" />
+<img src="{{site.url}}/assets/images/suc-bui-forge/041.png" />
+<img src="{{site.url}}/assets/images/suc-bui-forge/042.png" />
+<img src="{{site.url}}/assets/images/suc-bui-forge/043.png" />
+<img src="{{site.url}}/assets/images/suc-bui-forge/044.png" />
+<img src="{{site.url}}/assets/images/suc-bui-forge/045.png" />
+<img src="{{site.url}}/assets/images/suc-bui-forge/046.png" />
+
+
