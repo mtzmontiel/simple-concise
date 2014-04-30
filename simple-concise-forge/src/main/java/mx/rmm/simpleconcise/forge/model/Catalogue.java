@@ -11,6 +11,7 @@ import java.lang.Override;
 import javax.persistence.Enumerated;
 import mx.rmm.simpleconcise.forge.model.CatalogueStatus;
 import javax.persistence.EnumType;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Catalogue implements Serializable
@@ -25,12 +26,15 @@ public class Catalogue implements Serializable
    private int version;
 
    @Column(length = 10)
+   @NotNull
    private String code;
 
    @Column(length = 100)
+   @NotNull
    private String description;
 
    @Enumerated(EnumType.STRING)
+   @NotNull
    private CatalogueStatus status;
 
    public Long getId()

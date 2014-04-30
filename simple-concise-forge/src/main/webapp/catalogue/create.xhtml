@@ -38,27 +38,26 @@
 			<h:panelGrid columnClasses="label,component,required" columns="3">
 				<h:outputLabel for="catalogueBeanCatalogueCode" value="Code:"/>
 				<h:panelGroup>
-					<h:inputText id="catalogueBeanCatalogueCode" maxLength="10" value="#{catalogueBean.catalogue.code}"/>
+					<h:inputText id="catalogueBeanCatalogueCode" maxLength="10" required="true" value="#{catalogueBean.catalogue.code}"/>
 					<h:message for="catalogueBeanCatalogueCode" styleClass="error"/>
 				</h:panelGroup>
-				<h:outputText/>
+				<h:outputText value="*"/>
 				<h:outputLabel for="catalogueBeanCatalogueDescription" value="Description:"/>
 				<h:panelGroup>
-					<h:inputText id="catalogueBeanCatalogueDescription" maxLength="100" value="#{catalogueBean.catalogue.description}"/>
+					<h:inputText id="catalogueBeanCatalogueDescription" maxLength="100" required="true" value="#{catalogueBean.catalogue.description}"/>
 					<h:message for="catalogueBeanCatalogueDescription" styleClass="error"/>
 				</h:panelGroup>
-				<h:outputText/>
+				<h:outputText value="*"/>
 				<h:outputLabel for="catalogueBeanCatalogueStatus" value="Status:"/>
 				<h:panelGroup>
-					<h:selectOneMenu id="catalogueBeanCatalogueStatus" value="#{catalogueBean.catalogue.status}">
-						<f:selectItem/>
+					<h:selectOneMenu id="catalogueBeanCatalogueStatus" required="true" value="#{catalogueBean.catalogue.status}">
 						<f:selectItem itemValue="DRAFT"/>
 						<f:selectItem itemValue="PUBLISHED"/>
 						<f:selectItem itemValue="HIDDEN"/>
 					</h:selectOneMenu>
 					<h:message for="catalogueBeanCatalogueStatus" styleClass="error"/>
 				</h:panelGroup>
-				<h:outputText/>
+				<h:outputText value="*"/>
 			</h:panelGrid>
 
 			<div class="buttons">
