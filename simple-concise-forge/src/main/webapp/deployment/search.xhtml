@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:forgeview="http://jboss.org/forge/view"
+	template="/resources/scaffold/pageTemplate.xhtml">
+
+	<f:metadata>
+		<f:viewParam name="page" value='#{deploymentBean.page}'/>
+		<f:event type="preRenderView" listener='#{deploymentBean.paginate}'/>
+	</f:metadata>
+
+	<ui:param name="pageTitle" value="Search Deployment entities"/>
+
+	<ui:define name="header">
+		Deployment
+	</ui:define>
+
+	<ui:define name="subheader">
+		Search Deployment entities
+	</ui:define>
+
+	<ui:define name="footer"/>
+
+	<ui:define name="main">
+		<h:form id="search">
+			<f:validateBean disabled="true">
+				<h:panelGroup styleClass="search">
+
+					<h:panelGrid columnClasses="label,component,required" columns="3">
+						<h:outputLabel for="deploymentBeanExampleStatus" value="Status:"/>
+						<h:panelGroup>
+							<h:selectOneMenu id="deploymentBeanExampleStatus" value="#{deploymentBean.example.status}">
+								<f:selectItem/>
+								<f:selectItem itemValue="SCHEDULLED"/>
+								<f:selectItem itemValue="DEPLOYED"/>
+								<f:selectItem itemValue="REMOVED"/>
+								<f:selectItem itemValue="CANCELED"/>
+							</h:selectOneMenu>
+							<h:message for="deploymentBeanExampleStatus" styleClass="error"/>
+						</h:panelGroup>
+						<h:outputText/>
+						<h:outputLabel for="deploymentBeanExampleArtifact" value="Artifact:"/>
+						<h:panelGroup>
+							<h:selectOneMenu converter="#{artifactBean.converter}" id="deploymentBeanExampleArtifact" value="#{deploymentBean.example.artifact}">
+								<f:selectItem/>
+								<f:selectItems itemLabel="#{forgeview:display(_item)}" itemValue="#{_item}" value="#{artifactBean.all}" var="_item"/>
+							</h:selectOneMenu>
+							<h:message for="deploymentBeanExampleArtifact" styleClass="error"/>
+						</h:panelGroup>
+						<h:outputText/>
+						<h:outputLabel for="deploymentBeanExampleServer" value="Server:"/>
+						<h:panelGroup>
+							<h:selectOneMenu converter="#{serverBean.converter}" id="deploymentBeanExampleServer" value="#{deploymentBean.example.server}">
+								<f:selectItem/>
+								<f:selectItems itemLabel="#{forgeview:display(_item)}" itemValue="#{_item}" value="#{serverBean.all}" var="_item"/>
+							</h:selectOneMenu>
+							<h:message for="deploymentBeanExampleServer" styleClass="error"/>
+						</h:panelGroup>
+						<h:outputText/>
+					</h:panelGrid>
+					<h:panelGroup styleClass="buttons">
+						<h:commandLink value="Search" action='#{deploymentBean.search}' styleClass="btn btn-primary"/>
+						<h:commandLink value="Create New" action='#{deploymentBean.create}' styleClass="btn btn-primary"/>
+					</h:panelGroup>
+				</h:panelGroup>
+			</f:validateBean>
+			
+			<h:dataTable id="deploymentBeanPageItems" styleClass="data-table" value="#{deploymentBean.pageItems}" var="_item">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Date"/>
+					</f:facet>
+					<h:link outcome="/deployment/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemDate" value="#{_item.date}">
+							<f:convertDateTime type="both"/>
+						</h:outputText>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Status"/>
+					</f:facet>
+					<h:link outcome="/deployment/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemStatus" value="#{_item.status}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Artifact"/>
+					</f:facet>
+					<h:link outcome="/deployment/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="forgeviewdisplayitemArtifact" value="#{forgeview:display(_item.artifact)}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Server"/>
+					</f:facet>
+					<h:link outcome="/deployment/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="forgeviewdisplayitemServer" value="#{forgeview:display(_item.server)}"/>
+					</h:link>
+				</h:column>
+			</h:dataTable>
+			<ui:include src="/resources/scaffold/paginator.xhtml">
+				<ui:param name="paginatorBean" value='#{deploymentBean}'/>
+			</ui:include>
+		</h:form>
+			
+	</ui:define>
+
+</ui:composition>
