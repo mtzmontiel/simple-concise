@@ -15,6 +15,7 @@
 
         <p class="intro">
         {% if page.previous %}<a href="{{site.url}}/{{page.previous}}.html">Previous</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{% endif %}
+        {% if page.up %}<a href="{{site.url}}/{{page.up}}.html">Up</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{% endif %}
         <a href="{{site.url}}/">Index</a>&nbsp;&nbsp;&nbsp;
         {% if page.next %}|&nbsp;&nbsp;&nbsp;<a href="{{site.url}}/{{page.next}}.html">Next</a>{% endif %}
         </p>

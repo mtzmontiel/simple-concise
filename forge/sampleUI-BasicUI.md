@@ -2,6 +2,8 @@
 title: "Forge 01"
 description: "Sample Use Case - Basic UI"
 layout: post
+up: "sampleUC-BasicUI"
+next: "forge/sampleUI-BasicUI-02"
 tags: []
 ---
 
@@ -246,5 +248,34 @@ detailed page
 
 <img src="{{site.url}}/assets/images/suc-bui-forge/005.png" />
 
-Easy and to the point.
+Easy and to the point, now let's count lines.
 
+~~~
+simple-concise-forge$ for EXTN in \
+  `find -type f |  sed -r 's|.*(\.[a-z]*)|\1|g'|sort -u` ;\
+  do echo $EXTN ; \
+  find -iname "*$EXTN" | xargs wc -l | grep total;\
+  done
+
+.css
+  5677 total
+.java
+  514 total
+.xhtml
+  327 total
+.xml
+ 173 total
+
+~~~
+
+Just about 1 Kloc without taking into consideration language complexities,
+I'm just interested on a ballpark line count to correlate vs current 
+industry metrics. With this in mind i've just become a lot more "productive"
+but there are problems with this implementation that will become very 
+troublesome.
+
+You can find the source files here:
+
+https://github.com/mtzmontiel/simple-concise/releases/tag/code-forge-buc-bui-1.0
+
+Let's continue our example by adding our state machine to this.

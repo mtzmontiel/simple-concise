@@ -2,7 +2,7 @@
 title: "Sample Use Case - Basic User Interface"
 description: "user interface requirements"
 layout: post
-next: "sampleUC-BasicSecurity"
+next: "forge/sampleUI-BasicUI"
 tags: []
 ---
 
