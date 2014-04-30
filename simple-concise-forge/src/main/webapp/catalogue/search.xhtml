@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/resources/scaffold/pageTemplate.xhtml">
+
+	<f:metadata>
+		<f:viewParam name="page" value='#{catalogueBean.page}'/>
+		<f:event type="preRenderView" listener='#{catalogueBean.paginate}'/>
+	</f:metadata>
+
+	<ui:param name="pageTitle" value="Search Catalogue entities"/>
+
+	<ui:define name="header">
+		Catalogue
+	</ui:define>
+
+	<ui:define name="subheader">
+		Search Catalogue entities
+	</ui:define>
+
+	<ui:define name="footer"/>
+
+	<ui:define name="main">
+		<h:form id="search">
+			<f:validateBean disabled="true">
+				<h:panelGroup styleClass="search">
+
+					<h:panelGrid columnClasses="label,component,required" columns="3">
+						<h:outputLabel for="catalogueBeanExampleCode" value="Code:"/>
+						<h:panelGroup>
+							<h:inputText id="catalogueBeanExampleCode" maxLength="10" value="#{catalogueBean.example.code}"/>
+							<h:message for="catalogueBeanExampleCode" styleClass="error"/>
+						</h:panelGroup>
+						<h:outputText/>
+						<h:outputLabel for="catalogueBeanExampleDescription" value="Description:"/>
+						<h:panelGroup>
+							<h:inputText id="catalogueBeanExampleDescription" maxLength="100" value="#{catalogueBean.example.description}"/>
+							<h:message for="catalogueBeanExampleDescription" styleClass="error"/>
+						</h:panelGroup>
+						<h:outputText/>
+					</h:panelGrid>
+					<h:panelGroup styleClass="buttons">
+						<h:commandLink value="Search" action='#{catalogueBean.search}' styleClass="btn btn-primary"/>
+						<h:commandLink value="Create New" action='#{catalogueBean.create}' styleClass="btn btn-primary"/>
+					</h:panelGroup>
+				</h:panelGroup>
+			</f:validateBean>
+			
+			<h:dataTable id="catalogueBeanPageItems" styleClass="data-table" value="#{catalogueBean.pageItems}" var="_item">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Code"/>
+					</f:facet>
+					<h:link outcome="/catalogue/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemCode" value="#{_item.code}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Description"/>
+					</f:facet>
+					<h:link outcome="/catalogue/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemDescription" value="#{_item.description}"/>
+					</h:link>
+				</h:column>
+			</h:dataTable>
+			<ui:include src="/resources/scaffold/paginator.xhtml">
+				<ui:param name="paginatorBean" value='#{catalogueBean}'/>
+			</ui:include>
+		</h:form>
+			
+	</ui:define>
+
+</ui:composition>
