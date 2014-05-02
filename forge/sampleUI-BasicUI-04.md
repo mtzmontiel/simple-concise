@@ -80,24 +80,92 @@ Current metrics
 
 ~~~
 
+Our menu has the new Entities
+
 <img src="{{site.url}}/assets/images/suc-bui-forge/028.png" />
+
+And the gui for Artifact reflects the 1-N relation with
+deployment
+
 <img src="{{site.url}}/assets/images/suc-bui-forge/029.png" />
+
+So let's add a new Artifact
+
 <img src="{{site.url}}/assets/images/suc-bui-forge/030.png" />
+
+And now we begin to see where the problems might be hiding
+
 <img src="{{site.url}}/assets/images/suc-bui-forge/031.png" />
+
+The same story with Server
+
 <img src="{{site.url}}/assets/images/suc-bui-forge/032.png" />
+
+And the timestamp format is not obvious at first sight, a date
+time picker should be a better option
+
 <img src="{{site.url}}/assets/images/suc-bui-forge/033.png" />
+
+For now I'll copy paste the sugested format
+
 <img src="{{site.url}}/assets/images/suc-bui-forge/034.png" />
+
+On the Server homepage we can see the new server that we just 
+added
+
 <img src="{{site.url}}/assets/images/suc-bui-forge/035.png" />
+
+Now on Artifact we register a new item, capturing a timestamp 
+with the expected format
+
 <img src="{{site.url}}/assets/images/suc-bui-forge/036.png" />
+
+Now we have both ends of the N-M relation
+
 <img src="{{site.url}}/assets/images/suc-bui-forge/037.png" />
+
+But on the detail page of artifact there is no relation between 
+Artifact and Deployment. What happened?
+
 <img src="{{site.url}}/assets/images/suc-bui-forge/038.png" />
+
+The gui asked for valid inputs for the relation but we never 
+idicated to add said relation. Remember the (+) button? Let's 
+add one deployment.
+
 <img src="{{site.url}}/assets/images/suc-bui-forge/039.png" />
+
+On pressing save, we get the old alert of Not Null on thate 
+even if we do not want to add another deployment.
+
 <img src="{{site.url}}/assets/images/suc-bui-forge/040.png" />
+
+Capturing a timestamp and pressing save we can see that the
+fist deployment was created and the one that prompted us to
+capture a timestamp was not.
+
 <img src="{{site.url}}/assets/images/suc-bui-forge/041.png" />
+
+On the Deployment homepage we see that only one deployment is 
+registered
+
 <img src="{{site.url}}/assets/images/suc-bui-forge/042.png" />
+
+Adding a new deployment is easier from here
+
 <img src="{{site.url}}/assets/images/suc-bui-forge/043.png" />
+
+The results are reflected inmediately on the deployment homepage
+
 <img src="{{site.url}}/assets/images/suc-bui-forge/044.png" />
+
+The detail page of Deployment allows to navigate between both related entities
+
 <img src="{{site.url}}/assets/images/suc-bui-forge/045.png" />
+
+On server we see both deployments now
+
 <img src="{{site.url}}/assets/images/suc-bui-forge/046.png" />
 
+To continue let's find out what went wrong and fix it
 
