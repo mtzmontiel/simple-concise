@@ -252,7 +252,9 @@ And we can register deployments as needed.
 
 Please note that this is a work around and can possibly lead to errors if we have complex relations between various entities.
 
-All of this solves our initial requirements except for the timestamp which we'll look into later, lots of duplicated code and a security vulnerability.
+All of this solves our initial requirements except for the timestamp which we'll look into later, lots of duplicated code and a security vulnerability, right?
+
+Wrong, we are still missing the statemachine flows.
 
 We'll continue with another tool trying to solve the same scenarios
 
