@@ -56,20 +56,20 @@
 					<h:message for="deploymentBeanDeploymentStatus" styleClass="error"/>
 				</h:panelGroup>
 				<h:outputText value="*"/>
-				<h:outputLabel for="deploymentBeanDeploymentArtifact" value="Artifact:"/>
-				<h:panelGroup>
-					<h:selectOneMenu converter="#{artifactBean.converter}" id="deploymentBeanDeploymentArtifact" required="true" value="#{deploymentBean.deployment.artifact}">
-						<f:selectItems itemLabel="#{forgeview:display(_item)}" itemValue="#{_item}" value="#{artifactBean.all}" var="_item"/>
-					</h:selectOneMenu>
-					<h:message for="deploymentBeanDeploymentArtifact" styleClass="error"/>
-				</h:panelGroup>
-				<h:outputText value="*"/>
 				<h:outputLabel for="deploymentBeanDeploymentServer" value="Server:"/>
 				<h:panelGroup>
 					<h:selectOneMenu converter="#{serverBean.converter}" id="deploymentBeanDeploymentServer" required="true" value="#{deploymentBean.deployment.server}">
 						<f:selectItems itemLabel="#{forgeview:display(_item)}" itemValue="#{_item}" value="#{serverBean.all}" var="_item"/>
 					</h:selectOneMenu>
 					<h:message for="deploymentBeanDeploymentServer" styleClass="error"/>
+				</h:panelGroup>
+				<h:outputText value="*"/>
+				<h:outputLabel for="deploymentBeanDeploymentArtifact" value="Artifact:"/>
+				<h:panelGroup>
+					<h:selectOneMenu converter="#{artifactBean.converter}" id="deploymentBeanDeploymentArtifact" required="true" value="#{deploymentBean.deployment.artifact}">
+						<f:selectItems itemLabel="#{forgeview:display(_item)}" itemValue="#{_item}" value="#{artifactBean.all}" var="_item"/>
+					</h:selectOneMenu>
+					<h:message for="deploymentBeanDeploymentArtifact" styleClass="error"/>
 				</h:panelGroup>
 				<h:outputText value="*"/>
 			</h:panelGrid>

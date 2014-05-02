@@ -31,9 +31,6 @@ public class Server implements Serializable
    @NotNull
    private String code;
 
-   @OneToMany(mappedBy = "server", cascade = CascadeType.ALL)
-   private Set<Deployment> deployments = new HashSet<Deployment>();
-
    public Long getId()
    {
       return this.id;
@@ -102,15 +99,5 @@ public class Server implements Serializable
       if (code != null && !code.trim().isEmpty())
          result += "code: " + code;
       return result;
-   }
-
-   public Set<Deployment> getDeployments()
-   {
-      return this.deployments;
-   }
-
-   public void setDeployments(final Set<Deployment> deployments)
-   {
-      this.deployments = deployments;
    }
 }

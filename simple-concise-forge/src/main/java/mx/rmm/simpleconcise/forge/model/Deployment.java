@@ -41,10 +41,10 @@ public class Deployment implements Serializable
    private DeploymentStatus status;
 
    @ManyToOne(optional = false)
-   private Artifact artifact;
+   private Server server;
 
    @ManyToOne(optional = false)
-   private Server server;
+   private Artifact artifact;
 
    public Long getId()
    {
@@ -117,16 +117,6 @@ public class Deployment implements Serializable
       this.status = status;
    }
 
-   public Artifact getArtifact()
-   {
-      return this.artifact;
-   }
-
-   public void setArtifact(final Artifact artifact)
-   {
-      this.artifact = artifact;
-   }
-
    public Server getServer()
    {
       return this.server;
@@ -135,5 +125,15 @@ public class Deployment implements Serializable
    public void setServer(final Server server)
    {
       this.server = server;
+   }
+
+   public Artifact getArtifact()
+   {
+      return this.artifact;
+   }
+
+   public void setArtifact(final Artifact artifact)
+   {
+      this.artifact = artifact;
    }
 }

@@ -147,14 +147,7 @@ public class DeploymentBean implements Serializable
       try
       {
          Deployment deletableEntity = findById(getId());
-         Artifact artifact = deletableEntity.getArtifact();
-         artifact.getDeployments().remove(deletableEntity);
-         deletableEntity.setArtifact(null);
-         this.entityManager.merge(artifact);
-         Server server = deletableEntity.getServer();
-         server.getDeployments().remove(deletableEntity);
-         deletableEntity.setServer(null);
-         this.entityManager.merge(server);
+
          this.entityManager.remove(deletableEntity);
          this.entityManager.flush();
          return "search?faces-redirect=true";
@@ -242,15 +235,15 @@ public class DeploymentBean implements Serializable
       {
          predicatesList.add(builder.equal(root.get("status"), status));
       }
-      Artifact artifact = this.example.getArtifact();
-      if (artifact != null)
-      {
-         predicatesList.add(builder.equal(root.get("artifact"), artifact));
-      }
       Server server = this.example.getServer();
       if (server != null)
       {
          predicatesList.add(builder.equal(root.get("server"), server));
+      }
+      Artifact artifact = this.example.getArtifact();
+      if (artifact != null)
+      {
+         predicatesList.add(builder.equal(root.get("artifact"), artifact));
       }
 
       return predicatesList.toArray(new Predicate[predicatesList.size()]);

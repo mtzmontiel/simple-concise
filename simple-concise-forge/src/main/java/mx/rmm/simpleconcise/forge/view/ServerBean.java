@@ -25,8 +25,6 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import mx.rmm.simpleconcise.forge.model.Server;
-import java.util.Iterator;
-import mx.rmm.simpleconcise.forge.model.Deployment;
 
 /**
  * Backing bean for Server entities.
@@ -146,14 +144,7 @@ public class ServerBean implements Serializable
       try
       {
          Server deletableEntity = findById(getId());
-         Iterator<Deployment> iterDeployments = deletableEntity.getDeployments().iterator();
-         for (; iterDeployments.hasNext();)
-         {
-            Deployment nextInDeployments = iterDeployments.next();
-            nextInDeployments.setServer(null);
-            iterDeployments.remove();
-            this.entityManager.merge(nextInDeployments);
-         }
+
          this.entityManager.remove(deletableEntity);
          this.entityManager.flush();
          return "search?faces-redirect=true";

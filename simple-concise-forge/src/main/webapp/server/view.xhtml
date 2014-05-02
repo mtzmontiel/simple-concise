@@ -4,7 +4,6 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:forgeview="http://jboss.org/forge/view"
 	template="/resources/scaffold/pageTemplate.xhtml">
 
 	<f:metadata>
@@ -28,39 +27,6 @@
 		<h:panelGrid columnClasses="label,component,required" columns="3">
 			<h:outputLabel for="serverBeanServerCode" value="Code:"/>
 			<h:outputText id="serverBeanServerCode" value="#{serverBean.server.code}"/>
-			<h:outputText/>
-			<h:outputLabel for="serverBeanServerDeployments" value="Deployments:"/>
-			<h:dataTable id="serverBeanServerDeployments" styleClass="data-table" value="#{forgeview:asList(serverBean.server.deployments)}" var="_item">
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="Date"/>
-					</f:facet>
-					<h:link outcome="/deployment/view">
-						<f:param name="id" value="#{_item.id}"/>
-						<h:outputText id="itemDate" value="#{_item.date}">
-							<f:convertDateTime pattern="MMM d, yyyy hh:mm:ss a" type="both"/>
-						</h:outputText>
-					</h:link>
-				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="Status"/>
-					</f:facet>
-					<h:link outcome="/deployment/view">
-						<f:param name="id" value="#{_item.id}"/>
-						<h:outputText id="itemStatus" value="#{_item.status}"/>
-					</h:link>
-				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="Artifact"/>
-					</f:facet>
-					<h:link outcome="/deployment/view">
-						<f:param name="id" value="#{_item.id}"/>
-						<h:outputText id="forgeviewdisplayitemArtifact" value="#{forgeview:display(_item.artifact)}"/>
-					</h:link>
-				</h:column>
-			</h:dataTable>
 			<h:outputText/>
 		</h:panelGrid>
 

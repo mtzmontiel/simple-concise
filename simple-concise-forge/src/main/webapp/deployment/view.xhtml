@@ -33,14 +33,14 @@
 			<h:outputLabel for="deploymentBeanDeploymentStatus" value="Status:"/>
 			<h:outputText id="deploymentBeanDeploymentStatus" value="#{deploymentBean.deployment.status}"/>
 			<h:outputText/>
-			<h:outputLabel for="deploymentBeanDeploymentArtifact" value="Artifact:"/>
-			<h:link id="deploymentBeanDeploymentArtifact" outcome="/artifact/view" rendered="#{!empty deploymentBean.deployment.artifact}" value="#{deploymentBean.deployment.artifact}">
-				<f:param name="id" value="#{deploymentBean.deployment.artifact.id}"/>
-			</h:link>
-			<h:outputText/>
 			<h:outputLabel for="deploymentBeanDeploymentServer" value="Server:"/>
 			<h:link id="deploymentBeanDeploymentServer" outcome="/server/view" rendered="#{!empty deploymentBean.deployment.server}" value="#{deploymentBean.deployment.server}">
 				<f:param name="id" value="#{deploymentBean.deployment.server.id}"/>
+			</h:link>
+			<h:outputText/>
+			<h:outputLabel for="deploymentBeanDeploymentArtifact" value="Artifact:"/>
+			<h:link id="deploymentBeanDeploymentArtifact" outcome="/artifact/view" rendered="#{!empty deploymentBean.deployment.artifact}" value="#{deploymentBean.deployment.artifact}">
+				<f:param name="id" value="#{deploymentBean.deployment.artifact.id}"/>
 			</h:link>
 			<h:outputText/>
 		</h:panelGrid>

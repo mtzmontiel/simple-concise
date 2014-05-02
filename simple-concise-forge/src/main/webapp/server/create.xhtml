@@ -5,7 +5,6 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
-	xmlns:forgeview="http://jboss.org/forge/view"
 	template="/resources/scaffold/pageTemplate.xhtml">
 
 	<f:metadata>
@@ -43,71 +42,6 @@
 					<h:message for="serverBeanServerCode" styleClass="error"/>
 				</h:panelGroup>
 				<h:outputText value="*"/>
-				<h:outputLabel for="serverBeanServerDeployments" value="Deployments:"/>
-				<h:panelGroup>
-					<ui:param name="_collection" value="#{serverBean.server.deployments}"/>
-					<h:dataTable id="serverBeanServerDeployments" styleClass="data-table" value="#{forgeview:asList(_collection)}" var="_item">
-						<h:column>
-							<f:facet name="header">
-								<h:outputText value="Date"/>
-							</f:facet>
-							<h:link outcome="/deployment/view">
-								<f:param name="id" value="#{_item.id}"/>
-								<h:outputText id="itemDate" value="#{_item.date}">
-									<f:convertDateTime pattern="MMM d, yyyy hh:mm:ss a" type="both"/>
-								</h:outputText>
-							</h:link>
-							<f:facet name="footer">
-								<h:inputText id="deploymentBeanAddDate" value="#{deploymentBean.add.date}">
-									<f:convertDateTime pattern="MMM d, yyyy hh:mm:ss a" type="both"/>
-								</h:inputText>
-								<h:message for="deploymentBeanAddDate" styleClass="error"/>
-							</f:facet>
-						</h:column>
-						<h:column>
-							<f:facet name="header">
-								<h:outputText value="Status"/>
-							</f:facet>
-							<h:link outcome="/deployment/view">
-								<f:param name="id" value="#{_item.id}"/>
-								<h:outputText id="itemStatus" value="#{_item.status}"/>
-							</h:link>
-							<f:facet name="footer">
-								<h:selectOneMenu id="deploymentBeanAddStatus" value="#{deploymentBean.add.status}">
-									<f:selectItem itemValue="SCHEDULLED"/>
-									<f:selectItem itemValue="DEPLOYED"/>
-									<f:selectItem itemValue="REMOVED"/>
-									<f:selectItem itemValue="CANCELED"/>
-								</h:selectOneMenu>
-								<h:message for="deploymentBeanAddStatus" styleClass="error"/>
-							</f:facet>
-						</h:column>
-						<h:column>
-							<f:facet name="header">
-								<h:outputText value="Artifact"/>
-							</f:facet>
-							<h:link outcome="/deployment/view">
-								<f:param name="id" value="#{_item.id}"/>
-								<h:outputText id="forgeviewdisplayitemArtifact" value="#{forgeview:display(_item.artifact)}"/>
-							</h:link>
-							<f:facet name="footer">
-								<h:selectOneMenu converter="#{artifactBean.converter}" id="deploymentBeanAddArtifact" value="#{deploymentBean.add.artifact}">
-									<f:selectItems itemLabel="#{forgeview:display(_item)}" itemValue="#{_item}" value="#{artifactBean.all}" var="_item"/>
-								</h:selectOneMenu>
-								<h:message for="deploymentBeanAddArtifact" styleClass="error"/>
-							</f:facet>
-						</h:column>
-						<h:column footerClass="remove-column" headerClass="remove-column">
-							<h:commandLink action="#{_collection.remove(_item)}" styleClass="remove-button"/>
-							<f:facet name="footer">
-								<h:commandLink action="#{_collection.add(deploymentBean.added)}" id="serverBeanServerDeploymentsAdd" styleClass="add-button">
-									<f:setPropertyActionListener target="#{deploymentBean.add.server}" value="#{serverBean.server}"/>
-								</h:commandLink>
-							</f:facet>
-						</h:column>
-					</h:dataTable>
-				</h:panelGroup>
-				<h:outputText/>
 			</h:panelGrid>
 
 			<div class="buttons">

@@ -25,8 +25,6 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import mx.rmm.simpleconcise.forge.model.Artifact;
-import java.util.Iterator;
-import mx.rmm.simpleconcise.forge.model.Deployment;
 
 /**
  * Backing bean for Artifact entities.
@@ -146,14 +144,7 @@ public class ArtifactBean implements Serializable
       try
       {
          Artifact deletableEntity = findById(getId());
-         Iterator<Deployment> iterDeployments = deletableEntity.getDeployments().iterator();
-         for (; iterDeployments.hasNext();)
-         {
-            Deployment nextInDeployments = iterDeployments.next();
-            nextInDeployments.setArtifact(null);
-            iterDeployments.remove();
-            this.entityManager.merge(nextInDeployments);
-         }
+
          this.entityManager.remove(deletableEntity);
          this.entityManager.flush();
          return "search?faces-redirect=true";

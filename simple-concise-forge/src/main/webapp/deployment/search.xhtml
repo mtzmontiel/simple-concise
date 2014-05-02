@@ -42,15 +42,6 @@
 							<h:message for="deploymentBeanExampleStatus" styleClass="error"/>
 						</h:panelGroup>
 						<h:outputText/>
-						<h:outputLabel for="deploymentBeanExampleArtifact" value="Artifact:"/>
-						<h:panelGroup>
-							<h:selectOneMenu converter="#{artifactBean.converter}" id="deploymentBeanExampleArtifact" value="#{deploymentBean.example.artifact}">
-								<f:selectItem/>
-								<f:selectItems itemLabel="#{forgeview:display(_item)}" itemValue="#{_item}" value="#{artifactBean.all}" var="_item"/>
-							</h:selectOneMenu>
-							<h:message for="deploymentBeanExampleArtifact" styleClass="error"/>
-						</h:panelGroup>
-						<h:outputText/>
 						<h:outputLabel for="deploymentBeanExampleServer" value="Server:"/>
 						<h:panelGroup>
 							<h:selectOneMenu converter="#{serverBean.converter}" id="deploymentBeanExampleServer" value="#{deploymentBean.example.server}">
@@ -58,6 +49,15 @@
 								<f:selectItems itemLabel="#{forgeview:display(_item)}" itemValue="#{_item}" value="#{serverBean.all}" var="_item"/>
 							</h:selectOneMenu>
 							<h:message for="deploymentBeanExampleServer" styleClass="error"/>
+						</h:panelGroup>
+						<h:outputText/>
+						<h:outputLabel for="deploymentBeanExampleArtifact" value="Artifact:"/>
+						<h:panelGroup>
+							<h:selectOneMenu converter="#{artifactBean.converter}" id="deploymentBeanExampleArtifact" value="#{deploymentBean.example.artifact}">
+								<f:selectItem/>
+								<f:selectItems itemLabel="#{forgeview:display(_item)}" itemValue="#{_item}" value="#{artifactBean.all}" var="_item"/>
+							</h:selectOneMenu>
+							<h:message for="deploymentBeanExampleArtifact" styleClass="error"/>
 						</h:panelGroup>
 						<h:outputText/>
 					</h:panelGrid>
@@ -91,20 +91,20 @@
 				</h:column>
 				<h:column>
 					<f:facet name="header">
-						<h:outputText value="Artifact"/>
-					</f:facet>
-					<h:link outcome="/deployment/view">
-						<f:param name="id" value="#{_item.id}"/>
-						<h:outputText id="forgeviewdisplayitemArtifact" value="#{forgeview:display(_item.artifact)}"/>
-					</h:link>
-				</h:column>
-				<h:column>
-					<f:facet name="header">
 						<h:outputText value="Server"/>
 					</f:facet>
 					<h:link outcome="/deployment/view">
 						<f:param name="id" value="#{_item.id}"/>
 						<h:outputText id="forgeviewdisplayitemServer" value="#{forgeview:display(_item.server)}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Artifact"/>
+					</f:facet>
+					<h:link outcome="/deployment/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="forgeviewdisplayitemArtifact" value="#{forgeview:display(_item.artifact)}"/>
 					</h:link>
 				</h:column>
 			</h:dataTable>
