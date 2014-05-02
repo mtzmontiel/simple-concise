@@ -257,6 +257,7 @@ All of this solves our initial requirements except for the timestamp which we'll
 We'll continue with another tool trying to solve the same scenarios
 
 Current code metrics
+
 ~~~
 .java
  2757 total
