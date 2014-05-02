@@ -4,7 +4,7 @@ description: "Sample Use Case - Basic UI 03 - N to M"
 layout: post
 up: "sampleUC-BasicUI"
 previous: "forge/sampleUI-BasicUI-03"
-next: "forge/sampleUI-BasicUI-04"
+next: "forge/sampleUI-BasicUI-05"
 tags: []
 ---
 
