@@ -169,6 +169,7 @@ On server we see both deployments now
 
 To continue let's find out what went wrong and fix it
 
-You can find sourcecode [here][code-forge-buc-bui-1.3]
+You can find source code [here][code-forge-buc-bui-1.3]
+
 [code-forge-buc-bui-1.3]:https://github.com/mtzmontiel/simple-concise/releases/tag/code-forge-buc-bui-1.3
 
