@@ -10,8 +10,7 @@ Why
 
 For some time I have been redoing the same tasks one time after
 another and never quite getting things done. Even if my apps are
-on production environments there are things that always have to
-be time after time; normal things, weird things, required things
+on production environments there are things are inevitable; normal things, weird things, required things
 and absolutely wasteful things. Some of them are simple enough
 but time consuming others are really hard and once there is a
 clear path they must be done just on a operational service
@@ -21,8 +20,8 @@ What
 ====
 
 There are quite a lot of things that need to be done, for now I
-will enumerate in no particular order. At a later time this will
-be revised, reduced and prioritized
+will enumerate them in no particular order. At a later time this
+will be revised, reduced and prioritized.
 
 * Basic UI
 * Security
@@ -39,10 +38,11 @@ How
 
 Here I will try and probably fail (more likely abandon) to solve
 some of that problems with my particular point of view and
-restrictions. I still don't know at the time of writing what
+restrictions. I still don't know at the time of writing this what
 will I develop, it could be a framework allows to constraint
-such tasks, a tool that simplifies things or perhaps document
-existings tools and frameworks that allow to reduce time waste.
+such tasks, a tool that simplifies things or perhaps I will just 
+document existings tools and frameworks that allow to reduce
+the waste of time.
 
 When
 ====
