@@ -7,6 +7,8 @@ import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.ManyToMany;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
@@ -25,6 +27,6 @@ public class Container {
 
     /**
      */
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "container")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "container")
     private Set<Item> items = new HashSet<Item>();
 }
