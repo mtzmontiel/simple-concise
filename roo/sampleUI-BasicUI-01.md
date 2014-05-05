@@ -3,7 +3,7 @@ title: "Roo 01"
 description: "Sample Use Case - Basic UI now with Spring Roo"
 layout: post
 up: "sampleUC-BasicUI"
-next: "roo/sampleUI-BasicUI-01"
+next: "roo/sampleUI-BasicUI-02"
 tags: []
 ---
 Spring roo shares some ideas with forge and differ on quite a lot, other
