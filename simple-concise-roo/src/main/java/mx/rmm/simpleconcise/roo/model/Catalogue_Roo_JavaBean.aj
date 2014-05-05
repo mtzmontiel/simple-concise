@@ -4,6 +4,7 @@
 package mx.rmm.simpleconcise.roo.model;
 
 import mx.rmm.simpleconcise.roo.model.Catalogue;
+import mx.rmm.simpleconcise.roo.model.CatalogueStatus;
 
 privileged aspect Catalogue_Roo_JavaBean {
     
@@ -21,6 +22,14 @@ privileged aspect Catalogue_Roo_JavaBean {
     
     public void Catalogue.setDescription(String description) {
         this.description = description;
+    }
+    
+    public CatalogueStatus Catalogue.getStatus() {
+        return this.status;
+    }
+    
+    public void Catalogue.setStatus(CatalogueStatus status) {
+        this.status = status;
     }
     
 }

@@ -12,6 +12,7 @@ import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import mx.rmm.simpleconcise.roo.model.Catalogue;
 import mx.rmm.simpleconcise.roo.model.CatalogueDataOnDemand;
+import mx.rmm.simpleconcise.roo.model.CatalogueStatus;
 import org.springframework.stereotype.Component;
 
 privileged aspect CatalogueDataOnDemand_Roo_DataOnDemand {
@@ -26,6 +27,7 @@ privileged aspect CatalogueDataOnDemand_Roo_DataOnDemand {
         Catalogue obj = new Catalogue();
         setCode(obj, index);
         setDescription(obj, index);
+        setStatus(obj, index);
         return obj;
     }
     
@@ -37,6 +39,11 @@ privileged aspect CatalogueDataOnDemand_Roo_DataOnDemand {
     public void CatalogueDataOnDemand.setDescription(Catalogue obj, int index) {
         String description = "description_" + index;
         obj.setDescription(description);
+    }
+    
+    public void CatalogueDataOnDemand.setStatus(Catalogue obj, int index) {
+        CatalogueStatus status = CatalogueStatus.class.getEnumConstants()[0];
+        obj.setStatus(status);
     }
     
     public Catalogue CatalogueDataOnDemand.getSpecificCatalogue(int index) {

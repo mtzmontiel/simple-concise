@@ -15,8 +15,10 @@ import javax.faces.component.html.HtmlOutputText;
 import javax.faces.component.html.HtmlPanelGrid;
 import javax.faces.context.FacesContext;
 import mx.rmm.simpleconcise.roo.model.Catalogue;
+import mx.rmm.simpleconcise.roo.model.CatalogueStatus;
 import mx.rmm.simpleconcise.roo.web.CatalogueBean;
 import mx.rmm.simpleconcise.roo.web.util.MessageFactory;
+import org.primefaces.component.autocomplete.AutoComplete;
 import org.primefaces.component.inputtext.InputText;
 import org.primefaces.component.message.Message;
 import org.primefaces.component.outputlabel.OutputLabel;
@@ -158,6 +160,26 @@ privileged aspect CatalogueBean_Roo_ManagedBean {
         descriptionCreateInputMessage.setDisplay("icon");
         htmlPanelGrid.getChildren().add(descriptionCreateInputMessage);
         
+        OutputLabel statusCreateOutput = (OutputLabel) application.createComponent(OutputLabel.COMPONENT_TYPE);
+        statusCreateOutput.setFor("statusCreateInput");
+        statusCreateOutput.setId("statusCreateOutput");
+        statusCreateOutput.setValue("Status:");
+        htmlPanelGrid.getChildren().add(statusCreateOutput);
+        
+        AutoComplete statusCreateInput = (AutoComplete) application.createComponent(AutoComplete.COMPONENT_TYPE);
+        statusCreateInput.setId("statusCreateInput");
+        statusCreateInput.setValueExpression("value", expressionFactory.createValueExpression(elContext, "#{catalogueBean.catalogue.status}", CatalogueStatus.class));
+        statusCreateInput.setCompleteMethod(expressionFactory.createMethodExpression(elContext, "#{catalogueBean.completeStatus}", List.class, new Class[] { String.class }));
+        statusCreateInput.setDropdown(true);
+        statusCreateInput.setRequired(true);
+        htmlPanelGrid.getChildren().add(statusCreateInput);
+        
+        Message statusCreateInputMessage = (Message) application.createComponent(Message.COMPONENT_TYPE);
+        statusCreateInputMessage.setId("statusCreateInputMessage");
+        statusCreateInputMessage.setFor("statusCreateInput");
+        statusCreateInputMessage.setDisplay("icon");
+        htmlPanelGrid.getChildren().add(statusCreateInputMessage);
+        
         return htmlPanelGrid;
     }
     
@@ -205,6 +227,26 @@ privileged aspect CatalogueBean_Roo_ManagedBean {
         descriptionEditInputMessage.setDisplay("icon");
         htmlPanelGrid.getChildren().add(descriptionEditInputMessage);
         
+        OutputLabel statusEditOutput = (OutputLabel) application.createComponent(OutputLabel.COMPONENT_TYPE);
+        statusEditOutput.setFor("statusEditInput");
+        statusEditOutput.setId("statusEditOutput");
+        statusEditOutput.setValue("Status:");
+        htmlPanelGrid.getChildren().add(statusEditOutput);
+        
+        AutoComplete statusEditInput = (AutoComplete) application.createComponent(AutoComplete.COMPONENT_TYPE);
+        statusEditInput.setId("statusEditInput");
+        statusEditInput.setValueExpression("value", expressionFactory.createValueExpression(elContext, "#{catalogueBean.catalogue.status}", CatalogueStatus.class));
+        statusEditInput.setCompleteMethod(expressionFactory.createMethodExpression(elContext, "#{catalogueBean.completeStatus}", List.class, new Class[] { String.class }));
+        statusEditInput.setDropdown(true);
+        statusEditInput.setRequired(true);
+        htmlPanelGrid.getChildren().add(statusEditInput);
+        
+        Message statusEditInputMessage = (Message) application.createComponent(Message.COMPONENT_TYPE);
+        statusEditInputMessage.setId("statusEditInputMessage");
+        statusEditInputMessage.setFor("statusEditInput");
+        statusEditInputMessage.setDisplay("icon");
+        htmlPanelGrid.getChildren().add(statusEditInputMessage);
+        
         return htmlPanelGrid;
     }
     
@@ -236,6 +278,15 @@ privileged aspect CatalogueBean_Roo_ManagedBean {
         descriptionValue.setValueExpression("value", expressionFactory.createValueExpression(elContext, "#{catalogueBean.catalogue.description}", String.class));
         htmlPanelGrid.getChildren().add(descriptionValue);
         
+        HtmlOutputText statusLabel = (HtmlOutputText) application.createComponent(HtmlOutputText.COMPONENT_TYPE);
+        statusLabel.setId("statusLabel");
+        statusLabel.setValue("Status:");
+        htmlPanelGrid.getChildren().add(statusLabel);
+        
+        HtmlOutputText statusValue = (HtmlOutputText) application.createComponent(HtmlOutputText.COMPONENT_TYPE);
+        statusValue.setValueExpression("value", expressionFactory.createValueExpression(elContext, "#{catalogueBean.catalogue.status}", String.class));
+        htmlPanelGrid.getChildren().add(statusValue);
+        
         return htmlPanelGrid;
     }
     
@@ -248,6 +299,16 @@ privileged aspect CatalogueBean_Roo_ManagedBean {
     
     public void CatalogueBean.setCatalogue(Catalogue catalogue) {
         this.catalogue = catalogue;
+    }
+    
+    public List<CatalogueStatus> CatalogueBean.completeStatus(String query) {
+        List<CatalogueStatus> suggestions = new ArrayList<CatalogueStatus>();
+        for (CatalogueStatus catalogueStatus : CatalogueStatus.values()) {
+            if (catalogueStatus.name().toLowerCase().startsWith(query.toLowerCase())) {
+                suggestions.add(catalogueStatus);
+            }
+        }
+        return suggestions;
     }
     
     public String CatalogueBean.onEdit() {
