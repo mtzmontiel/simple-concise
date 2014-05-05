@@ -57,6 +57,52 @@ privileged aspect ApplicationBean_Roo_ApplicationBean {
         item.setUpdate(":dataForm:data");
         submenu.getChildren().add(item);
         menuModel.addSubmenu(submenu);
+        
+        submenu = new Submenu();
+        submenu.setId("containerSubmenu");
+        submenu.setLabel("Container");
+        item = new MenuItem();
+        item.setId("createContainerMenuItem");
+        item.setValueExpression("value", expressionFactory.createValueExpression(elContext, "#{messages.label_create}", String.class));
+        item.setActionExpression(expressionFactory.createMethodExpression(elContext, "#{containerBean.displayCreateDialog}", String.class, new Class[0]));
+        item.setIcon("ui-icon ui-icon-document");
+        item.setAjax(false);
+        item.setAsync(false);
+        item.setUpdate(":dataForm:data");
+        submenu.getChildren().add(item);
+        item = new MenuItem();
+        item.setId("listContainerMenuItem");
+        item.setValueExpression("value", expressionFactory.createValueExpression(elContext, "#{messages.label_list}", String.class));
+        item.setActionExpression(expressionFactory.createMethodExpression(elContext, "#{containerBean.displayList}", String.class, new Class[0]));
+        item.setIcon("ui-icon ui-icon-folder-open");
+        item.setAjax(false);
+        item.setAsync(false);
+        item.setUpdate(":dataForm:data");
+        submenu.getChildren().add(item);
+        menuModel.addSubmenu(submenu);
+        
+        submenu = new Submenu();
+        submenu.setId("itemSubmenu");
+        submenu.setLabel("Item");
+        item = new MenuItem();
+        item.setId("createItemMenuItem");
+        item.setValueExpression("value", expressionFactory.createValueExpression(elContext, "#{messages.label_create}", String.class));
+        item.setActionExpression(expressionFactory.createMethodExpression(elContext, "#{itemBean.displayCreateDialog}", String.class, new Class[0]));
+        item.setIcon("ui-icon ui-icon-document");
+        item.setAjax(false);
+        item.setAsync(false);
+        item.setUpdate(":dataForm:data");
+        submenu.getChildren().add(item);
+        item = new MenuItem();
+        item.setId("listItemMenuItem");
+        item.setValueExpression("value", expressionFactory.createValueExpression(elContext, "#{messages.label_list}", String.class));
+        item.setActionExpression(expressionFactory.createMethodExpression(elContext, "#{itemBean.displayList}", String.class, new Class[0]));
+        item.setIcon("ui-icon ui-icon-folder-open");
+        item.setAjax(false);
+        item.setAsync(false);
+        item.setUpdate(":dataForm:data");
+        submenu.getChildren().add(item);
+        menuModel.addSubmenu(submenu);
     }
     
     public MenuModel ApplicationBean.getMenuModel() {
