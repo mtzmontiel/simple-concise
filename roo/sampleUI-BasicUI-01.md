@@ -207,3 +207,27 @@ Current metrics
 ~~~
 
 Let's continue with our enum on the first sample.
+
+{% highlight bash %}
+roo> field enum --class ~.model.Catalogue --type ~.model.CatalogueStatus --fieldName status --enumType STRING --notNull 
+Updated SRC_MAIN_JAVA/mx/rmm/simpleconcise/roo/model/Catalogue.java
+Updated SRC_MAIN_JAVA/mx/rmm/simpleconcise/roo/web/CatalogueBean_Roo_ManagedBean.aj
+Updated SRC_TEST_JAVA/mx/rmm/simpleconcise/roo/model/CatalogueDataOnDemand_Roo_DataOnDemand.aj
+Updated SRC_MAIN_JAVA/mx/rmm/simpleconcise/roo/model/Catalogue_Roo_Jpa_ActiveRecord.aj
+Updated SRC_MAIN_JAVA/mx/rmm/simpleconcise/roo/model/Catalogue_Roo_JavaBean.aj
+~.model.Catalogue roo> web jsf all --package ~.web
+
+{% endhighlight %}
+
+Now our creation dialog asks for the status and another difference, the 
+value of status can be captured or selected
+
+<img src="{{site.url}}/assets/images/suc-bui-roo/005.png" />
+
+After succesfull creation we are redirected to the list all page.
+
+<img src="{{site.url}}/assets/images/suc-bui-roo/006.png" />
+
+Other thing we are missing are the search fields so all the results are
+shown on the same table albeit paginated
+
