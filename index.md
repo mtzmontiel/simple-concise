@@ -55,5 +55,7 @@ TOC
 ===
 
 * <a href="{{site.url}}/sampleUC-BasicUI.html">Sample Use Case - Basic User Interface</a>
+    * <a href="{{site.url}}/forge/sampleUI-BasicUI.html">Sample Use Case - Basic User Interface  With Jboss Forge</a>
+    * <a href="{{site.url}}/roo/sampleUI-BasicUI-01.html">Sample Use Case - Basic User Interface  With Spring Roo</a>
 * <a href="{{site.url}}/sampleUC-BasicSecurity.html">Sample Use Case - Basic Security</a>
 
