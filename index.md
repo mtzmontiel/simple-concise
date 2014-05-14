@@ -10,11 +10,14 @@ Why
 
 For some time I have been redoing the same tasks one time after
 another and never quite getting things done. Even if my apps are
-on production environments there are things are inevitable; normal things, weird things, required things
-and absolutely wasteful things. Some of them are simple enough
-but time consuming others are really hard and once there is a
-clear path they must be done just on a operational service
-window with high risk of failure.
+on production environments there are things are inevitable; normal things, 
+weird things, required things and absolutely wasteful things. Some of them 
+are simple enough but time consuming others are really hard and once there 
+is a clear path they must be done just on a operational service window with
+high risk of failure.
+
+Note that this is currently a work in progress, you can find info on updates
+<a href="{{site.url}}/updates.html">here</a>.
 
 What
 ====
