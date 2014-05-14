@@ -1,8 +1,11 @@
 digraph  catalogueStatus { 
-    rankdir=LR
+    rankdir=LR;
+    node [shape="Mrecord"];
     DRAFT;
     PUBLISHED;
     HIDDEN;
+    i [label="" shape=circle bgcolor=black color=black]
+    i -> DRAFT;
     DRAFT -> PUBLISHED [label="publish"];
     PUBLISHED -> HIDDEN [label="hide"];
     HIDDEN -> PUBLISHED [label="publish"];

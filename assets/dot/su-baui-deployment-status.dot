@@ -1,6 +1,9 @@
 digraph deploymentStatus {
     rankdir=LR
+    node [shape=Mrecord]
     SCHEDULLED, DEPLOYED, REMOVED, CANCELED;
+    i [label="" shape=circle]
+    i->SCHEDULLED
     SCHEDULLED -> DEPLOYED [label="deploy"];
     DEPLOYED -> REMOVED [label="remove"];
     SCHEDULLED -> CANCELED [label="cancel"];
