@@ -2,9 +2,9 @@
 title: "Forge 03"
 description: "Sample Use Case - Basic UI 02 - One to Many"
 layout: post
-up: "sampleUC-BasicUI"
-previous: "forge/sampleUI-BasicUI-02"
-next: "forge/sampleUI-BasicUI-04"
+up: "subaui/sampleUC-BasicUI"
+previous: "subaui/forge/sampleUI-BasicUI-02"
+next: "subaui/forge/sampleUI-BasicUI-04"
 tags: []
 ---
 
