@@ -5,6 +5,11 @@ layout: post
 tags: []
 ---
 
+Author: Rafael Martínez Montiel
+Date:   Thu May 15 12:44:17 2014 -0500
+
+    Closing UI for now
+
 Author: Rafael Martínez Montiel 
 Date:   Tue May 13 18:05:03 2014 -0500
 
@@ -14,7 +19,6 @@ Author: Rafael Martínez Montiel
 Date:   Mon May 5 12:28:51 2014 -0500
 
     Spring ROO / Sample UI Basic UI 01. without enum
-
 
 Author: Rafael Martínez Montiel 
 Date:   Fri May 2 12:29:36 2014 -0500
