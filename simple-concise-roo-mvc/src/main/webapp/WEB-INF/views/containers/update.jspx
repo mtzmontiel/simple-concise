@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_mx_rmm_simpleconcise_roomvc_model_Container" modelAttribute="container" path="/containers" versionField="Version" z="Kbzvi+ObS51c3t01vQu7GN+Xgq4=">
+        <field:input field="code" id="c_mx_rmm_simpleconcise_roomvc_model_Container_code" required="true" z="KFOgTcp6l08Tru/tVF+pkaN5GCY="/>
+        <field:input field="description" id="c_mx_rmm_simpleconcise_roomvc_model_Container_description" required="true" z="UQIdNJXrrwW36ulqJohc8h3b0Iw="/>
+        <field:simple field="items" id="c_mx_rmm_simpleconcise_roomvc_model_Container_items" messageCode="entity_reference_not_managed" messageCodeAttribute="Item" z="nlQmw0iwPMm6EMW8uv/MdXQl/hw="/>
+    </form:update>
+</div>

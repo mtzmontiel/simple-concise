@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_mx_rmm_simpleconcise_roomvc_model_Deployment" items="${deployments}" z="Xp2MKPDcX0KAnFP4ODZZe8Kq2zY=">
+        <table:table data="${deployments}" id="l_mx_rmm_simpleconcise_roomvc_model_Deployment" path="/deployments" z="3pmj8KC3UA3mmi3//63SnilDKpk=">
+            <table:column id="c_mx_rmm_simpleconcise_roomvc_model_Deployment_name" property="name" z="o0mwNQlqviJrPMo8wE0FvPuYeJY="/>
+            <table:column date="true" dateTimePattern="${deployment_schedulleddate_date_format}" id="c_mx_rmm_simpleconcise_roomvc_model_Deployment_schedulledDate" property="schedulledDate" z="z2MdzIgo6YH6Z5niJGldXvKyGlA="/>
+            <table:column id="c_mx_rmm_simpleconcise_roomvc_model_Deployment_status" property="status" z="b8x9dduX2CNiXP2EEVdPOOWb8/E="/>
+            <table:column id="c_mx_rmm_simpleconcise_roomvc_model_Deployment_artifact" property="artifact" z="XPx0NWU6L4sUUg9ZHvFX2FGu9Sg="/>
+            <table:column id="c_mx_rmm_simpleconcise_roomvc_model_Deployment_server" property="server" z="FNkX6svVfaI2STalYgu4IAP4fA8="/>
+        </table:table>
+    </page:list>
+</div>

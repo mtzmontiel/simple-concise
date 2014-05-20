@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_mx_rmm_simpleconcise_roomvc_model_Deployment" object="${deployment}" path="/deployments" z="9vpU3OqAKCwCN3hBR0XCNleh4ro=">
+        <field:display field="name" id="s_mx_rmm_simpleconcise_roomvc_model_Deployment_name" object="${deployment}" z="YixjnIamCpQXMjnXrbt11Djve4Y="/>
+        <field:display date="true" dateTimePattern="${deployment_schedulleddate_date_format}" field="schedulledDate" id="s_mx_rmm_simpleconcise_roomvc_model_Deployment_schedulledDate" object="${deployment}" z="/OMCrCASqBN4YxeJtXJmobhhr6o="/>
+        <field:display field="status" id="s_mx_rmm_simpleconcise_roomvc_model_Deployment_status" object="${deployment}" z="XitvD8P2UVDtAH2eWEEEDOKLZr0="/>
+        <field:display field="artifact" id="s_mx_rmm_simpleconcise_roomvc_model_Deployment_artifact" object="${deployment}" z="QJtHYfVcjjoSMD/5IMwQU69Vtts="/>
+        <field:display field="server" id="s_mx_rmm_simpleconcise_roomvc_model_Deployment_server" object="${deployment}" z="TbNlMcgLETx+yw6/Mw+IR0HeuOQ="/>
+    </page:show>
+</div>

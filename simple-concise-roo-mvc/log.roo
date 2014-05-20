@@ -1,0 +1,39 @@
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-05-20 16:22:39
+project --topLevelPackage mx.rmm.simpleconcise.roomvc --packaging WAR --projectName simple-concise-roo-mvc --
+persistence setup --database H2_IN_MEMORY --provider HIBERNATE 
+enum type --class ~.domain.CatalogueStatus 
+enum type --class ~.model.CatalogueStatus 
+enum constant --name DRAFT 
+enum constant --name PUBLISHED
+enum constant --name HIDDEN
+entity jpa --class ~.model.Catalogue --testAutomatically
+field string --fieldName code --notNull 
+field string --fieldName description --notNull 
+web mvc setup
+field enum --class ~.model.Catalogue --type ~.model.CatalogueStatus --fieldName status --enumType STRING --notNull 
+web mvc all --package mx.rmm.simpleconcise.roomvc.mvc
+entity jpa --class ~.model.Item --testAutomatically 
+field string --fieldName code --notNull 
+field string --fieldName description --notNull 
+entity jpa --class ~.model.Container --testAutomatically 
+field string --fieldName code --notNull 
+field string --fieldName description --notNull 
+field set --fieldName items --class ~.model.Container --type ~.model.Item --mappedBy container --fetch EAGER --cardinality ONE_TO_MANY 
+field reference --fieldName container --class ~.model.Item --type ~.model.Container --notNull 
+entity jpa --class ~.model.Artifact --testAutomatically 
+field string --fieldName name --notNull 
+enum type --class ~.model.DeploymentStatus
+enum constant --class ~.model.DeploymentStatus --name SCHEDULLED
+enum constant --class ~.model.DeploymentStatus --name DEPLOYED
+enum constant --class ~.model.DeploymentStatus --name REMOVED
+enum constant --class ~.model.DeploymentStatus --name CANCELED
+entity jpa --class ~.model.Deployment --testAutomatically 
+field string --fieldName name --notNull 
+field date --fieldName schedulledDate --type java.util.Date 
+field enum --fieldName status --type ~.model.DeploymentStatus --notNull 
+entity jpa --class ~.model.Server --testAutomatically 
+field string --fieldName name --notNull 
+field reference --fieldName artifact --type ~.model.Artifact --class ~.model.Deployment --notNull 
+field reference --fieldName server --type ~.model.Server --class ~.model.Deployment --notNull 
+finder list
+web mvc all --package mx.rmm.simpleconcise.roomvc.mvc

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_catalogue" z="U9cDGzQlHQKOTDFjBOYO5mU1EzQ=">
+            <menu:item id="i_catalogue_new" messageCode="global_menu_new" url="/catalogues?form" z="esuiYpJkH5lgubaTdpv1t5wtBMY="/>
+            <menu:item id="i_catalogue_list" messageCode="global_menu_list" url="/catalogues?page=1&amp;size=${empty param.size ? 10 : param.size}" z="9qjQPnpoy13kQWcnPR61ynOV1CQ="/>
+        </menu:category>
+        <menu:category id="c_item" z="jWO1pnucyLwI2bZuwfja4eCYsjU=">
+            <menu:item id="i_item_new" messageCode="global_menu_new" url="/items?form" z="I+/MpOYxZ47XKvsQW1PUi6uC060="/>
+            <menu:item id="i_item_list" messageCode="global_menu_list" url="/items?page=1&amp;size=${empty param.size ? 10 : param.size}" z="4RxBMvjr2gUD8qO0DTWmjd1SzS0="/>
+        </menu:category>
+        <menu:category id="c_artifact" z="0Qe/hlVN3gyyJEnPX3vB0YIh8JY=">
+            <menu:item id="i_artifact_new" messageCode="global_menu_new" url="/artifacts?form" z="G4UetoLhlArEkOXiXslETn/hg8M="/>
+            <menu:item id="i_artifact_list" messageCode="global_menu_list" url="/artifacts?page=1&amp;size=${empty param.size ? 10 : param.size}" z="qG8D7WxbDs3tyOJsq7p6m3PndEM="/>
+        </menu:category>
+        <menu:category id="c_container" z="XqOOWT7xIClZeUyG2iJ0J+M+1XY=">
+            <menu:item id="i_container_new" messageCode="global_menu_new" url="/containers?form" z="zPZaX1xZEYIMmXfNbwIYJu9D4Fw="/>
+            <menu:item id="i_container_list" messageCode="global_menu_list" url="/containers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="gmRelJFlRPedSwfpBPdExDouyu0="/>
+        </menu:category>
+        <menu:category id="c_server" z="Hm0GrFXfueKwxPqAQou++DaYysQ=">
+            <menu:item id="i_server_new" messageCode="global_menu_new" url="/servers?form" z="yhR9MlzzLx68UV2kipD8FrmcRwY="/>
+            <menu:item id="i_server_list" messageCode="global_menu_list" url="/servers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="qJbOjtfF1BszGNn3L9fGGwQWd54="/>
+        </menu:category>
+        <menu:category id="c_deployment" z="s5i2CL0Tgb4hjLA5SCOhEyge1SQ=">
+            <menu:item id="i_deployment_new" messageCode="global_menu_new" url="/deployments?form" z="YRUKLn7rtknVbSLL9lpOCT5UZrk="/>
+            <menu:item id="i_deployment_list" messageCode="global_menu_list" url="/deployments?page=1&amp;size=${empty param.size ? 10 : param.size}" z="ZrR0AlidvQUGaSmizfEtSN5ynN8="/>
+        </menu:category>
+    </menu:menu>
+</div>
