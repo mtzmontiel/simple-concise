@@ -4,7 +4,7 @@ description: "Sample Use Case - Sample 03 Many to Many"
 layout: post
 up: "subaui/sampleUC-BasicUI"
 previous: "subaui/roo/sampleUI-BasicUI-02"
-next: "subaui/roo/sampleUI-BasicUI-03"
+next: "subaui/sampleUC-BasicUI-closing"
 tags: []
 ---
 Now to the complicated example

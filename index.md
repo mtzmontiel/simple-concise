@@ -60,5 +60,6 @@ TOC
 * <a href="{{site.url}}/subaui/sampleUC-BasicUI.html">Sample Use Case - Basic User Interface</a>
     * <a href="{{site.url}}/subaui/forge/sampleUI-BasicUI.html">Sample Use Case - Basic User Interface  With Jboss Forge</a>
     * <a href="{{site.url}}/subaui/roo/sampleUI-BasicUI-01.html">Sample Use Case - Basic User Interface  With Spring Roo</a>
+    * <a href="{{site.url}}/subaui/sampleUC-BasicUI-closing.html">Sample Use Case - Basic User Interface Closing</a>
 * <a href="{{site.url}}/sampleUC-BasicSecurity.html">Sample Use Case - Basic Security</a>
 

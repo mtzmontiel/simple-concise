@@ -4,7 +4,11 @@ description: "Changelog"
 layout: post
 tags: []
 ---
+Author: Rafael Martínez Montiel
+Date:   2014-05-20
 
+    Closing UI with linecounts on CLI
+    
 Author: Rafael Martínez Montiel
 Date:   Thu May 15 12:44:17 2014 -0500
 
