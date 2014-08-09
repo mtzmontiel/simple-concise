@@ -14,6 +14,8 @@ TOC
     * <a href="{{site.url}}/subaui/sampleUC-BasicUI-closing.html">Sample Use Case - Basic User Interface Closing</a>
 * <a href="{{site.url}}/sampleUC-BasicSecurity.html">Sample Use Case - Basic Security</a>
 
+{% include toc.md %}
+
 Why
 ===
 
