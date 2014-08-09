@@ -1,5 +1,5 @@
 ---
-title: "Forge 03 - Sample Use Case - Basic UI 02 - One to Many"
+title: "01.02.03 Basic UI - Forge 03 - Sample Use Case - Basic UI 02 - One to Many"
 description: "Sample Use Case - Basic UI 02 - One to Many"
 layout: post
 up: "subaui/sampleUC-BasicUI"

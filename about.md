@@ -1,6 +1,6 @@
 ---
-title: "Simple-Concise - Index"
-description: "Index"
+title: "Simple-Concise - About the author"
+description: "About this developer"
 layout: post
 tags: []
 ---

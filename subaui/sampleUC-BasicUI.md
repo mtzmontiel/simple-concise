@@ -1,5 +1,5 @@
 ---
-title: "Sample Use Case - Basic User Interface - user interface requirements"
+title: "01.01 Sample Use Case - Basic User Interface - user interface requirements"
 description: "user interface requirements"
 layout: post
 next: "subaui/forge/sampleUI-BasicUI"

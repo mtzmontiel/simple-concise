@@ -1,6 +1,6 @@
 ---
-title: "Simple-Concise - Index"
-description: "Index"
+title: "00 Simple-Concise - Index"
+description: "A recollection of thoughts and tools on software development"
 layout: post
 tags: []
 ---
