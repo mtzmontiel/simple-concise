@@ -1,5 +1,5 @@
 ---
-title: "Simple-Concise"
+title: "Simple-Concise - Index"
 description: "Index"
 layout: post
 tags: []

@@ -1,5 +1,5 @@
 ---
-title: "Sample Use Case - Basic User Interface"
+title: "Sample Use Case - Basic User Interface - Closing comments on UI"
 description: "Closing comments on UI"
 layout: post
 prev: "subaui/forge/roo/sampleUI-BasicUI-03"

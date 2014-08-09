@@ -1,5 +1,5 @@
 ---
-title: "Roo 01"
+title: "Roo 01 - Sample Use Case - Basic UI now with Spring Roo"
 description: "Sample Use Case - Basic UI now with Spring Roo"
 layout: post
 up: "subaui/sampleUC-BasicUI"

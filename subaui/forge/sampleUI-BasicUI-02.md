@@ -1,5 +1,5 @@
 ---
-title: "Forge 02"
+title: "Forge 02 - Sample Use Case - Basic UI 01 - Status"
 description: "Sample Use Case - Basic UI 01 - Status"
 layout: post
 up: "subaui/sampleUC-BasicUI"

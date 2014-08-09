@@ -1,5 +1,5 @@
 ---
-title: "updates"
+title: "updates - Changelog"
 description: "Changelog"
 layout: post
 tags: []

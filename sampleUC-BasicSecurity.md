@@ -1,5 +1,5 @@
 ---
-title: "Basic security"
+title: "Basic security - security requirements"
 description: "security requirements"
 layout: post
 previous: "subaui/sampleUC-BasicUI-closing"
