@@ -37,3 +37,4 @@ field reference --fieldName artifact --type ~.model.Artifact --class ~.model.Dep
 field reference --fieldName server --type ~.model.Server --class ~.model.Deployment --notNull 
 finder list
 web mvc all --package mx.rmm.simpleconcise.roomvc.mvc
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-08-26 15:02:15

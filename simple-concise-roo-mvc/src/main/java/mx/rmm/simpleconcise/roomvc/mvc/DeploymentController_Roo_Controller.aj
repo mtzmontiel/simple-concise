@@ -43,10 +43,10 @@ privileged aspect DeploymentController_Roo_Controller {
         populateEditForm(uiModel, new Deployment());
         List<String[]> dependencies = new ArrayList<String[]>();
         if (Artifact.countArtifacts() == 0) {
-            dependencies.add(new String[] { "artifact", "artifacts" });
+            dependencies.add(new String[] { "status", "artifacts" });
         }
         if (Server.countServers() == 0) {
-            dependencies.add(new String[] { "server", "servers" });
+            dependencies.add(new String[] { "artifact", "servers" });
         }
         uiModel.addAttribute("dependencies", dependencies);
         return "deployments/create";
