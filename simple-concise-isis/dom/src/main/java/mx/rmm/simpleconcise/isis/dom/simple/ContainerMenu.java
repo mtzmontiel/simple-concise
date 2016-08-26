@@ -31,47 +31,34 @@ import org.apache.isis.applib.annotation.ParameterLayout;
 import org.apache.isis.applib.annotation.SemanticsOf;
 import org.apache.isis.applib.services.eventbus.ActionDomainEvent;
 
-@DomainService(
-        nature = NatureOfService.VIEW_MENU_ONLY,
-        repositoryFor = SimpleObject.class
-)
-@DomainServiceLayout(
-        named = "Simple Objects",
-        menuOrder = "10"
-)
-public class SimpleObjectMenu {
-
+@DomainService(nature = NatureOfService.VIEW_MENU_ONLY, repositoryFor = Container.class)
+@DomainServiceLayout(named = "Containers", menuOrder = "10")
+public class ContainerMenu {
 
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "1")
-    public List<SimpleObject> listAll() {
-        return simpleObjectRepository.listAll();
+    public List<Container> listAll() {
+        return containerRepository.listAll();
     }
-
 
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "2")
-    public List<SimpleObject> findByName(
-            @ParameterLayout(named="Name")
-            final String name
-    ) {
-        return simpleObjectRepository.findByName(name);
+    public List<Container> findByCode(@ParameterLayout(named = "Code") final String code) {
+        return containerRepository.findByCode(code);
     }
 
+    public static class CreateDomainEvent extends ActionDomainEvent<Container> {
+    }
 
-    public static class CreateDomainEvent extends ActionDomainEvent<SimpleObjectMenu> {}
     @Action(domainEvent = CreateDomainEvent.class)
     @MemberOrder(sequence = "3")
-    public SimpleObject create(
-            @ParameterLayout(named="Name")
-            final String name) {
-        return simpleObjectRepository.create(name);
+    public Container create(@ParameterLayout(named = "Name") final String name, @ParameterLayout(named="Server") Server server) {
+        return containerRepository.create(name, server);
     }
 
-
     @javax.inject.Inject
-    SimpleObjectRepository simpleObjectRepository;
+    ContainerRepository containerRepository;
 
 }
